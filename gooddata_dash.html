@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Appear Abroad</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+</head>
+<body>
+    <main id="container">
+        <div class="header">
+            <a href="index.html" class="split">Sopagnaphea Kim</a>
+            <a href="gooddata_analytic.html">Analytical Designer</a>
+            <a href="gooddata_dash.html" class="active">Dashboards</a>
+        </div>
+
+        <h1>GoodData</h1>
+
+        <div style="overflow-x:auto;">
+            <h2>Task 1: Tournament Statistics Dashboard</h2>
+            <!-- Token: MTA4M2YxOGMtNzY1My00MjcyLTk3ZTgtZjc0NWM4NWE0YzA5OlRva2VuMDpGbmdvbVRUc3IvNVVnUXd2SkVxd0U4S0tIWU1EaW9TVg== -->
+
+            <iframe id="embedded-app-frame" src="https://razzmatazz-moose.trial.cloud.gooddata.com/dashboards/embedded/#/workspace/f858368523d24b2186a60f1da7eebc12/dashboard/7cebfe69-5af5-48bd-9a4c-af7659dd14c6?apiTokenAuthentication=true&showNavigation=true" height="700px" width="100%" frameborder="0"></iframe>
+            <script>
+                console.log("Setup parent frame message listener")
+            
+                window.addEventListener(
+                    "message",
+                    function (event) {
+                        console.log("Post message received", event);
+            
+                        if (event.data.gdc?.event.name === "listeningForApiToken") {
+                            const postMessageStructure = {
+                                gdc: {
+                                    product: "dashboard",
+                                    event: {
+                                        name: "setApiToken",
+                                        data: {
+                                            token: "MTA4M2YxOGMtNzY1My00MjcyLTk3ZTgtZjc0NWM4NWE0YzA5OlRva2VuMDpGbmdvbVRUc3IvNVVnUXd2SkVxd0U4S0tIWU1EaW9TVg=="
+                                        }
+                                    }
+                                }
+                            };
+                            console.log("Sending token to embedded window");
+            
+                            const origin = "*";
+                            const iframe = document.getElementById("embedded-app-frame").contentWindow;
+                            iframe.postMessage(postMessageStructure, origin);
+                        }
+                    },
+                    false
+                );
+            </script>
+
+            <h2>Task 2: Cosmetic Statistics Dashboard</h2>
+
+            <iframe id="embedded-app-frame2" src="https://razzmatazz-moose.trial.cloud.gooddata.com/dashboards/embedded/#/workspace/bf1b6249b27446118078f6dc338db25e/dashboard/2ac1c054-0515-46f3-a44b-2237e6f4fb77?apiTokenAuthentication=true&showNavigation=true" height="700px" width="100%" frameborder="0" ></iframe>
+            <script>
+                console.log("Setup parent frame message listener")
+
+                window.addEventListener(
+                    "message",
+                    function (event) {
+                        console.log("Post message received", event);
+
+                        if (event.data.gdc?.event.name === "listeningForApiToken") {
+                            const postMessageStructure = {
+                                gdc: {
+                                    product: "dashboard",
+                                    event: {
+                                        name: "setApiToken",
+                                        data: {
+                                            token: "MTA4M2YxOGMtNzY1My00MjcyLTk3ZTgtZjc0NWM4NWE0YzA5OlRva2VuMDpGbmdvbVRUc3IvNVVnUXd2SkVxd0U4S0tIWU1EaW9TVg=="
+                                        }
+                                    }
+                                }
+                            };
+                            console.log("Sending token to embedded window");
+
+                            const origin = "*";
+                            const iframe = document.getElementById("embedded-app-frame2").contentWindow;
+                            iframe.postMessage(postMessageStructure, origin);
+                        }
+                    },
+                    false
+                );
+            </script>
+        </div>
+
+        <div class="footer">
+            <ul>
+                <a href="">© 2024 - Student Project</a>
+                <a href="">Facebook</a>
+                <a href="">Instagram</a>
+                <a href="">Youtube</a>
+                <a href="">Tik Tok</a>
+                <a href="mailto:sopagnaphea.kim@uhk.cz">Email</a>
+            </ul>
+        </div>
+    </main>
+    
+</body>
+</html>
